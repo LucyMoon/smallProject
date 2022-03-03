@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/inbox_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inbox"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bigpic_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="BigPicture"
+        app:layout_constraintBottom_toTopOf="@+id/inbox_btn"
+        app:layout_constraintEnd_toEndOf="@+id/inbox_btn"
+        app:layout_constraintStart_toStartOf="@+id/inbox_btn" />
+
+    <Button
+        android:id="@+id/bigtv_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="BigText"
+        app:layout_constraintBottom_toTopOf="@+id/bigpic_btn"
+        app:layout_constraintEnd_toEndOf="@+id/bigpic_btn"
+        app:layout_constraintStart_toStartOf="@+id/bigpic_btn" />
+
+    <Button
+        android:id="@+id/basic_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Basic"
+        app:layout_constraintBottom_toTopOf="@+id/bigtv_btn"
+        app:layout_constraintEnd_toEndOf="@+id/bigtv_btn"
+        app:layout_constraintStart_toStartOf="@+id/bigtv_btn" />
+
+    <Button
+        android:id="@+id/msg_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Messaging"
+        app:layout_constraintEnd_toEndOf="@+id/inbox_btn"
+        app:layout_constraintStart_toStartOf="@+id/inbox_btn"
+        app:layout_constraintTop_toBottomOf="@+id/inbox_btn" />
+
+    <Button
+        android:id="@+id/inline_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Inline"
+        app:layout_constraintEnd_toEndOf="@+id/msg_btn"
+        app:layout_constraintStart_toStartOf="@+id/msg_btn"
+        app:layout_constraintTop_toBottomOf="@+id/msg_btn" />
+
+    <Button
+        android:id="@+id/headup_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="HeadUp"
+        app:layout_constraintEnd_toEndOf="@+id/inline_btn"
+        app:layout_constraintStart_toStartOf="@+id/inline_btn"
+        app:layout_constraintTop_toBottomOf="@+id/inline_btn" />
+</androidx.constraintlayout.widget.ConstraintLayout>
