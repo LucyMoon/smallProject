@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         private var instance:MainActivity? = null
         var memoList = arrayListOf<Memo>() //전역 변수로 선언
         var memoDb : MemoDB? = null //전역 변수로 선언
+        var P : Int? = null
         fun getInstance(): MainActivity? {
             return instance
         }
@@ -72,7 +73,18 @@ class MainActivity : AppCompatActivity() {
         memoDb?.memoDao()?.delete(memo = memoList[position])
     }
 
-    fun mod(position : Int){
-        memoDb?.memoDao()?.update(memo = memoList[position])
+    fun pos(pos: Int){
+        P = pos
+        //startActivity(Intent(this, modifyActivity::class.java))
+        //finish()
+    }
+
+    fun mod(title : String , text : String){
+        memoDb?.memoDao()?.update(title, text, memoList[P!!].id)
+        memoList.clear()
+        val savedmemo = memoDb!!.memoDao().getAll()
+        if(savedmemo.isNotEmpty()){
+            memoList.addAll(savedmemo)
+        }
     }
 }

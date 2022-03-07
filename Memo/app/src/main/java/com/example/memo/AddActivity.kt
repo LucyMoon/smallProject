@@ -13,9 +13,9 @@ class AddActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
 
-        var addtitle = findViewById<EditText>(R.id.add_title)
-        var addtext = findViewById<EditText>(R.id.add_text)
-        var addnext = findViewById<Button>(R.id.add_next)
+        var addtitle = findViewById<EditText>(R.id.mod_title)
+        var addtext = findViewById<EditText>(R.id.mod_text)
+        var addnext = findViewById<Button>(R.id.mod_next)
 
         memoDb = MemoDB.getInstance(this)
 

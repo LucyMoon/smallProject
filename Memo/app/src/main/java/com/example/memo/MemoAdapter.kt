@@ -1,6 +1,9 @@
 package com.example.memo
 
 import android.content.Context
+import android.content.Intent
+import android.text.Editable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,15 +38,24 @@ class MemoAdapter(val context: Context, val memos: ArrayList<Memo>) :
         fun bind(memo: Memo) {
             title?.text = memo.title
             text?.text = memo.text
+            text?.visibility = View.GONE
             modify!!.setOnClickListener{
-                //메모 수정
-                MainActivity().mod(adapterPosition)
+                MainActivity().pos(adapterPosition)
+                MainActivity().mod("aa", "aa")
+                //위 코드를 액티비티 넘어간 뒤에 실행
                 notifyDataSetChanged()
             }
             delete!!.setOnClickListener{
                 MainActivity().del(adapterPosition)
                 memos.removeAt(adapterPosition)
                 notifyDataSetChanged()
+            }
+            itemView.setOnClickListener{
+                if(text?.visibility == View.VISIBLE){
+                    text?.visibility = View.GONE
+                }else{
+                    text?.visibility = View.VISIBLE
+                }
             }
         }
     }
