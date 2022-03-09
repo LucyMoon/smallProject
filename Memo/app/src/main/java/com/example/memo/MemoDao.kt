@@ -17,7 +17,4 @@ interface MemoDao {
 
     @Query("UPDATE memo SET title = :t, text = :d WHERE id = :Id")
     fun update(t: String, d: String, Id: Long?)
-
-    /*@Update
-    fun update(memo: Memo)*/
 }

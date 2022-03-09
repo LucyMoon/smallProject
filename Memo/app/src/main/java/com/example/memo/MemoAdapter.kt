@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class MemoAdapter(val context: Context, val memos: ArrayList<Memo>) :
@@ -41,8 +42,11 @@ class MemoAdapter(val context: Context, val memos: ArrayList<Memo>) :
             text?.visibility = View.GONE
             modify!!.setOnClickListener{
                 MainActivity().pos(adapterPosition)
-                MainActivity().mod("aa", "aa")
-                //위 코드를 액티비티 넘어간 뒤에 실행
+                Intent(context, modifyActivity::class.java).apply {
+                    putExtra("title", memo.title)
+                    putExtra("text", memo.text)
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                }.run { context.startActivity(this) }
                 notifyDataSetChanged()
             }
             delete!!.setOnClickListener{
@@ -52,7 +56,7 @@ class MemoAdapter(val context: Context, val memos: ArrayList<Memo>) :
             }
             itemView.setOnClickListener{
                 if(text?.visibility == View.VISIBLE){
-                    text?.visibility = View.GONE
+                    text.visibility = View.GONE
                 }else{
                     text?.visibility = View.VISIBLE
                 }

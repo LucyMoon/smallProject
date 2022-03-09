@@ -12,13 +12,9 @@ class MainActivity : AppCompatActivity() {
     lateinit var mAdapter : MemoAdapter
 
     companion object{
-        private var instance:MainActivity? = null
         var memoList = arrayListOf<Memo>() //전역 변수로 선언
         var memoDb : MemoDB? = null //전역 변수로 선언
         var P : Int? = null
-        fun getInstance(): MainActivity? {
-            return instance
-        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,8 +71,6 @@ class MainActivity : AppCompatActivity() {
 
     fun pos(pos: Int){
         P = pos
-        //startActivity(Intent(this, modifyActivity::class.java))
-        //finish()
     }
 
     fun mod(title : String , text : String){
