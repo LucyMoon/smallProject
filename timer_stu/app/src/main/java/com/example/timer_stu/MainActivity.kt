@@ -1,10 +1,18 @@
 package com.example.timer_stu
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import java.util.*
 import kotlin.concurrent.timer
 import kotlin.concurrent.timerTask
@@ -23,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         val stopbtn = findViewById<Button>(R.id.stop)
         val resetbtn = findViewById<ImageView>(R.id.refresh)
         val list_tv = findViewById<TextView>(R.id.list_tv)
+
         startbtn.setOnClickListener{
             if(!check) {
                 startTimer()
@@ -43,8 +52,8 @@ class MainActivity : AppCompatActivity() {
             list_tv.text = "${list_tv.text.toString()}\n$min : $sec : $milli"
         }
 
-
     }
+
     private fun startTimer(){
         check = true
         timerTask = timer(period = 10){

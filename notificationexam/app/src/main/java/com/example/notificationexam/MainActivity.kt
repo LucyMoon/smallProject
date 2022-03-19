@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -97,6 +98,7 @@ class MainActivity : AppCompatActivity() {
 
         val notificationManager = NotificationManagerCompat.from(this)
         notificationManager.notify(NOTIFICATION_ID_BASIC, builder.build())    // NotificationManager.notify()으로 노티를 등록한다.
+
     }
 
     fun bigtvnoti(){ //BigText 스타일 적용한 노티피케이션
