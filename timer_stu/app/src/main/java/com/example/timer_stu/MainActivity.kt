@@ -54,6 +54,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+
     private fun startTimer(){
         check = true //시작 버튼이 눌린 상태로 변경
         timerTask = timer(period = 10){ //타이머를 시작 (period = 10은 0.01초마다 반복
