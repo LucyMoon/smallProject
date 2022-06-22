@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <data>
+
+        <variable
+            name="item"
+            type="kr.hs.dgsw.historyproject.Rcv_Item" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/Rcv_Img"
+            android:layout_width="192dp"
+            android:layout_height="108dp"
+            app:imageUrl="@{item.Img}"
+            app:error="@{@drawable/ic_launcher_background}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/Rcv_Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/Rcv_Img"
+            app:layout_constraintLeft_toLeftOf="@id/Rcv_Img"
+            app:layout_constraintRight_toRightOf="@id/Rcv_Img"
+            android:text="@{item.title}"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/Rcv_Info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{item.info}"
+            app:layout_constraintTop_toBottomOf="@id/Rcv_Title"
+            app:layout_constraintLeft_toLeftOf="@id/Rcv_Title"
+            app:layout_constraintRight_toRightOf="@id/Rcv_Title"
+            android:textSize="12sp" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</layout>
