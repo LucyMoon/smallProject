@@ -7,9 +7,7 @@ import android.os.Looper
 import android.os.Message
 import android.view.View
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import kr.hs.dgsw.historyproject.databinding.ActivityMainBinding
 
@@ -98,10 +96,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 binding.item4.setBackgroundResource(R.color.purple_200)
             }
         }
-
-    }
-
-    private fun onClickBtn() {
 
     }
 
